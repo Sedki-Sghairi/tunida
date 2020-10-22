@@ -5,6 +5,7 @@ import mongoose from 'mongoose'
 import userRoute from './routes/userRoute'
 import bodyParser from 'body-parser'
 import productRoute from './routes/productRoute'
+import orderRoute from './routes/orderRoute'
 
 dotenv.config()
 const mongodbUrl = config.MONGODB_URL;
@@ -19,15 +20,12 @@ const app = express();
 app.use(bodyParser.json())
 app.use('/api/users' , userRoute)
 app.use('/api/products' , productRoute)
+app.use('/api/orders', orderRoute);
 
-// app.get('/api/products', (req, res) => {
-// 	res.send(data.products);
-// });
-// app.get('/api/products/:id', (req, res) => {
-// 	const productId = req.params.id;
-// 	const product = data.products.find((x) => x.id === productId);
-// 	product ? res.send(product) : res.status(404).send({ msg: 'Product Not Found.' });
-// });
+const CLIENT_ID = config.PAYPAL_CLIENT_ID
+app.get('/api/config/paypal', (req, res) =>{
+	res.send(CLIENT_ID)
+})
 
 
 app.listen(5000, () => {

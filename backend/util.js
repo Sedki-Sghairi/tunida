@@ -31,7 +31,7 @@ const isAuth = (req, res, next) => {
   }
 }
 const Admin = (req, res, next) =>{
-  if(req.User.isAdmin){
+  if(req.user.isAdmin){
      next()
      return
   }

@@ -1,7 +1,7 @@
 import express from 'express'
 import UserModel from '../models/userModels';
 
-import { getToken } from '../util';
+import { getToken, isAuth } from '../util';
 
 const router = express.Router();
 
@@ -27,10 +27,10 @@ router.post('/signin', async (req, res) =>{
 router.get('/createadmin', async(req, res) => {
  try {
     const user = new UserModel({
-        name: 'houssem',
-        password: '1234',
+        name: 'ida',
+        password: '123',
         isAdmin: true,
-        email: 'ha@g.m'
+        email: 'a@g.c'
     })
     const newUser = await user.save()
     res.send(newUser)
@@ -58,4 +58,24 @@ router.post('/register', async(req, res) => {
         res.send({msg: error.message })
     }
 })
+
+router.put('/:id', isAuth, async (req, res) => {
+    const userId = req.params.id;
+    const user = await UserModel.findById(userId);
+    if (user) {
+      user.name = req.body.name || user.name;
+      user.email = req.body.email || user.email;
+      user.password = req.body.password || user.password;
+      const updatedUser = await user.save();
+      res.send({
+        _id: updatedUser.id,
+        name: updatedUser.name,
+        email: updatedUser.email,
+        isAdmin: updatedUser.isAdmin,
+        token: getToken(updatedUser),
+      });
+    } else {
+      res.status(404).send({ message: 'User Not Found' });
+    }
+  });
 export default router
