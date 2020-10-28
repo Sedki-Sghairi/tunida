@@ -27,6 +27,7 @@ const CLIENT_ID = config.PAYPAL_CLIENT_ID
 app.get('/api/config/paypal', (req, res) =>{
 	res.send(CLIENT_ID)
 })
+   
 
 const PORT = process.env.PORT || 5000
 app.listen(PORT, () => {
