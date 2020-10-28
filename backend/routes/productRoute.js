@@ -1,7 +1,7 @@
 import express, { response } from 'express'
 import ProductModel from '../models/productModel';
 
-import { isAuth } from '../util';
+import { isAuth , Admin } from '../util';
 
 const router = express.Router();
 
@@ -16,10 +16,28 @@ router.get('/:id', async (req, res) => {
 
 
 router.get('/', async(req , res) => {
-  const products = await ProductModel.find({})
+  const category = req.query.category?{ category:(req.query.category)}:{}
+  const searchKeyword = req.query.searchKeyword
+  ?
+  { 
+    title:{
+      $regex: req.query.searchKeyword,
+      $options: 'i'
+    }
+  }
+  :{}
+  const sortOrder = req.query.sortOrder
+  ?
+(  req.query.sortOrder==='lowest'
+  ? { price:1 }
+  :{ price:-1 })
+  :{ _id:-1 }
+  const products = await ProductModel.find({ ...category,...searchKeyword }).sort(
+    sortOrder
+    )
   res.send(products)
 })
- router.post('/', isAuth, async(req , res) => {
+ router.post('/', isAuth, Admin, async(req , res) => {
   const product = new ProductModel({
       title: req.body.title,
       price: req.body.price,
@@ -35,11 +53,11 @@ router.get('/', async(req , res) => {
   }
   return res.status(500).send({msg: 'Error when trying to add product.'})
  })
- router.put('/:id', isAuth ,async(req , res) => {
+ router.put('/:id', isAuth, Admin ,async(req , res) => {
    const productId = req.params.id 
    const product = await ProductModel.findById(productId)
   if(product){
-      product._id = req.body._id
+      product._id = req.body.id
       product.title= req.body.title
       product.price= req.body.price
       product.stock= req.body.stock
@@ -56,7 +74,7 @@ router.get('/', async(req , res) => {
       return res.status(500).send({msg: 'Error when trying to update the product.'})
  })
 
- router.delete('/:id', isAuth,async(req, res) => {
+ router.delete('/:id',isAuth ,Admin , async(req, res) => {
    
    const product = await ProductModel.findById(req.params.id )
    if(product){

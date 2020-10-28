@@ -1,6 +1,5 @@
 import express from 'express'
 import UserModel from '../models/userModels';
-
 import { getToken, isAuth } from '../util';
 
 const router = express.Router();
@@ -13,7 +12,7 @@ router.post('/signin', async (req, res) =>{
     })
     if(signinUser){
       res.send({
-          _id: signinUser._id,
+          _id: signinUser.id,
           name: signinUser.name,
           email: signinUser.email,
           isAdmin: signinUser.isAdmin, 
@@ -48,7 +47,7 @@ router.post('/register', async(req, res) => {
        })
        const newUserRegister = await userRegister.save()
        res.send({
-           _id:newUserRegister._id,
+           _id:newUserRegister.id,
            name:newUserRegister.name,
            email:newUserRegister.email,
            isAdmin:newUserRegister.isAdmin,

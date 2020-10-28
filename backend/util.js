@@ -32,9 +32,12 @@ const isAuth = (req, res, next) => {
 }
 const Admin = (req, res, next) =>{
   if(req.user.isAdmin){
+    console.log('mrigwl')
      next()
      return
   }
-  return res.status(401).send({msg: req})
+  else{
+    return res.status(401).send({msg: req})
+  }
 }
 export { getToken,  isAuth, Admin }
