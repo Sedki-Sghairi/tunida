@@ -5,7 +5,7 @@ import userRoute from './routes/userRoute'
 import bodyParser from 'body-parser'
 import productRoute from './routes/productRoute'
 import orderRoute from './routes/orderRoute'
-import "core-js/stable";
+import "core-js";
 import "regenerator-runtime/runtime.js";
 import "@babel/polyfill";
 
