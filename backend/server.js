@@ -5,7 +5,8 @@ import userRoute from './routes/userRoute'
 import bodyParser from 'body-parser'
 import productRoute from './routes/productRoute'
 import orderRoute from './routes/orderRoute'
-import 'core-js/stable'
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 
 const mongodbUrl = config.MONGODB_URL;
 mongoose.connect(mongodbUrl, {
