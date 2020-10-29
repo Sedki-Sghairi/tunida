@@ -6,7 +6,7 @@ import bodyParser from 'body-parser'
 import productRoute from './routes/productRoute'
 import orderRoute from './routes/orderRoute'
 import "core-js/stable";
-import "regenerator-runtime/runtime";
+import "regenerator-runtime/runtime.js";
 import "@babel/polyfill";
 
 const mongodbUrl = config.MONGODB_URL;
