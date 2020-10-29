@@ -7,6 +7,7 @@ import productRoute from './routes/productRoute'
 import orderRoute from './routes/orderRoute'
 import "core-js/stable";
 import "regenerator-runtime/runtime";
+import "@babel/polyfill";
 
 const mongodbUrl = config.MONGODB_URL;
 mongoose.connect(mongodbUrl, {

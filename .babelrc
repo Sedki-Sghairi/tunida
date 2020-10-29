@@ -1,10 +1,10 @@
+
 {
-  "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "useBuiltIns": "usage"
+"presets": [
+    [ "@babel/preset-env", {
+      "targets": {
+        "browsers": ["last 2 Chrome versions"]
       }
-    ]
+    }]
   ]
 }
