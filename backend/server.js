@@ -1,6 +1,5 @@
-import express from 'express'
-import '@babel/runtime'
-import '@babel/plugin-transform-runtime'
+import express from 'express';
+
 import config from './config'
 import mongoose from 'mongoose'
 import userRoute from './routes/userRoute'
