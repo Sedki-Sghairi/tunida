@@ -5,14 +5,6 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import store from './store';
-import express from 'express'
-
-if (process.env.NODE_ENV === "production"){
-	app.use(express.static("build"));
-	app.get("*", (req, res) => {
-	  res.sendFile(path.resolve(__dirname,  "build", "index.html"));
-	});
-  }
 
 ReactDOM.render(
 	<React.StrictMode>
