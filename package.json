@@ -9,7 +9,6 @@
   "scripts": {
     "start": "nodemon --watch backend --exec babel-node backend/server.js",
     "build": "rm -rf dist && babel backend -d dist && cd frontend && npm install && npm run build"
-  
   },
   "author": "sedki",
   "license": "ISC",
@@ -46,5 +45,5 @@
     "url": "https://github.com/Sedki-Sghairi/tunida/issues"
   },
   "homepage": "https://github.com/Sedki-Sghairi/tunida#readme",
-  "description": ""
+  "description": "tunida-fashion"
 }
