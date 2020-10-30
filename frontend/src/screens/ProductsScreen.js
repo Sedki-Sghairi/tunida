@@ -33,6 +33,7 @@ export default function ProductsScreen(props) {
         return () => {
             //
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [successSave, successDelete])
     
     const openModal = (product) => {

@@ -16,6 +16,7 @@ export default function HomeScreen(props) {
 		return (err) => {
 			console.error(err);
 		};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [category]);
 	function removeSidebar() {
 		document.getElementById('sidebar').classList.remove('open');

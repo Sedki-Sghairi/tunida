@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { logout, update } from '../actions/userAction';
 import { listMyOrders } from '../actions/orderActions';
@@ -25,17 +25,18 @@ function ProfileScreen(props) {
 
   const myOrderList = useSelector(state => state.myOrderList);
   const { loading: loadingOrders, orders, error: errorOrders } = myOrderList;
-  const stableDispatch = useCallback(dispatch,[])
+  
   useEffect(() => {
     if (userInfo) {
       setEmail(userInfo.email);
       setName(userInfo.name);
       setPassword(userInfo.password);
     }
-    stableDispatch(listMyOrders());
+    dispatch(listMyOrders());
     return (err) => {
      console.error(err)
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userInfo])
 
   return <div className="profile">

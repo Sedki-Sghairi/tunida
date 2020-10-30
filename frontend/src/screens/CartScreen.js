@@ -17,7 +17,7 @@ function CartScreen(props) {
        if(productId){
         dispatch(addToCart(productId , qty))
        }
-      
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    },[])
    const cart = useSelector(state => state.cart)
    const {cartItems} = cart

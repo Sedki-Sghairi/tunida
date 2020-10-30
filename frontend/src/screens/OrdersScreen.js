@@ -17,6 +17,7 @@ function OrdersScreen(props) {
     return (error) => {
       console.error(error)
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [successDelete]);
 
   const deleteHandler = (order) => {

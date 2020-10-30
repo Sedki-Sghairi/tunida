@@ -15,6 +15,7 @@ export default function ProductScreen(props) {
 		return () => {
 			//
 		};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 	const handlePayment = () => {
 		props.history.push('/cart/' + props.match.params.id + '?qty' + qty);

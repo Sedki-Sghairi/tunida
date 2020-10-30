@@ -34,7 +34,7 @@ function PlaceOrderScreen(props) {
     if (success) {
       props.history.push("/order/" + order._id);
     }
-
+   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [success]);
 
   return <div>
