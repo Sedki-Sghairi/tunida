@@ -29,12 +29,12 @@ app.get('/api/config/paypal', (req, res) =>{
 	res.send(CLIENT_ID)
 })
    
-app.use(express.static(path.join(__dirname,'/../frontend/build')))
+app.use(express.static(path.join(__dirname,'../frontend/build')))
 app.get('*', (req, res) => {
-	res.sendFile(path.join(`${__dirname} + '/../frontend/build/index.html'`))
+	res.sendFile(path.join(__dirname + '../frontend/build/index.html'))
   })
 
-
-app.listen(config.PORT, () => {
-	console.log(`Mixing it up on port ${PORT}`)
-  })
+const PORT = process.env.PORT || 5000
+app.listen(PORT, () => {
+  console.log(`Mixing it up on port ${PORT}`)
+})
