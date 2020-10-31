@@ -8,7 +8,7 @@ import orderRoute from './routes/orderRoute'
 import "core-js";
 import "regenerator-runtime/runtime.js";
 import "@babel/polyfill";
-
+const path = require('path')
 const mongodbUrl = config.MONGODB_URL;
 mongoose.connect(mongodbUrl, {
 	useNewUrlParser: true,
@@ -29,8 +29,10 @@ app.get('/api/config/paypal', (req, res) =>{
 	res.send(CLIENT_ID)
 })
    
-
-
+app.use(express.static(path.join(__dirname, '../frontend/build')))
+app.get('*', (req, res) => {
+	res.sendFile(path.join(__dirname + '../frontend/build/index.html'))
+  })
 // app.listen( 5000, () => {
 // 	console.log('server started at: http://localhost:5000');
 // });
