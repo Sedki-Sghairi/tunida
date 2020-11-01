@@ -1,12 +1,5 @@
 import dotenv from 'dotenv'
 dotenv.config()
-// export default {
-  
-//     MONGODB_URL: process.env.MONGODB_URL || 'mongodb+srv://sedki:sedkiDb@cluster0.y95bs.mongodb.net/sedki?retryWrites=true&w=majority',
-//     JWT_SECRET: process.env.JWT_SECRET ||  'quelquechosesecret',
-   
-    
-// }
 export default {
     PORT : process.env.PORT || 5000,
     MONGODB_URL: process.env.MONGODB_URL || 'mongodb://localhost/ida',
