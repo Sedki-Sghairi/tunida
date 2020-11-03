@@ -36,9 +36,6 @@ export default function ProductScreen(props) {
 								<span className='product-brand '>{product.brand}</span>
 								<h4 className='cart-name'>{product.title}</h4>
 							</li>
-							<li>
-								{product.rating} stars {product.reviews}
-							</li>
 							<li className='description'>{product.description}</li>
 						</ul>
 					<div className="details-image">

@@ -41,11 +41,10 @@ function ProfileScreen(props) {
 
   return <div className="profile">
     <div className="profile-info">
-      <div className="form">
         <form onSubmit={submitHandler} >
-          <ul className="form-container">
+          <ul>
             <li>
-              <h2>User Profile</h2>
+              <h2>Update Profile</h2>
             </li>
             <li>
               {loading && <div>Loading...</div>}
@@ -84,7 +83,6 @@ function ProfileScreen(props) {
 
           </ul>
         </form>
-      </div>
     </div>
     <div className="profile-orders content-margined">
       {
@@ -105,9 +103,9 @@ function ProfileScreen(props) {
                   <td>{order._id}</td>
                   <td>{order.createdAt}</td>
                   <td>{order.totalPrice}</td>
-                  <td>{order.isPaid}</td>
+                  <td>{order.isPaid?'Paid':'Not Paid'}</td>
                   <td>
-                    <Link to={"/order/" + order._id}>DETAILS</Link>
+                    <Link to={"/order/" + order._id} className='details-btn'>DETAILS</Link>
                   </td>
                 </tr>)}
               </tbody>

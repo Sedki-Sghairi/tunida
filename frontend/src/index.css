@@ -33,6 +33,9 @@ a {
 	text-decoration: none;
 	transition: all .3s linear;
 }
+textarea {
+	resize: none;
+}
 .full-width {
 	width: 100%;
 }
@@ -107,6 +110,10 @@ a {
 }
 .routes-container {
 	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 /*products*/
 .products {
@@ -467,19 +474,19 @@ a {
 }
 
 /* Signin page */
-
 .form {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
+	padding: 0;
 }
 .form-container {
 	width: 100%;
 	height: 90%;
 	min-height: 30rem;
 	max-height: 50rem;
-	max-width: 40rem;
+	max-width: 30rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
@@ -492,10 +499,39 @@ a {
 	flex-direction: column;
 	margin-bottom: 1rem;
 }
+.form-container li textarea,
 .form-container li input {
 	padding: 1rem;
 	border: #c6d2d8 solid 1px;
 	border-radius: .5rem;
+}
+.form-content {
+	width: 100%;
+	min-height: 30rem;
+	max-height: 50rem;
+	min-width: 20rem;
+	max-width: 40rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	color: #32444d;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+	padding: 0;
+}
+.form-content li {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1rem;
+}
+.form-content li label {
+	text-align: left;
+}
+.form-content li input {
+	padding: 1.2rem;
+	border: #c6d2d8 solid 1px;
+	border-radius: .5rem;
+	width: 25rem;
 }
 .button-secondary {
 	padding: .9rem;
@@ -568,19 +604,32 @@ input::placeholder {
 	justify-content: space-between;
 	align-items: flex-start;
 }
+.products-listed {
+	color: rgb(87, 107, 87);
+	padding: 1rem;
+	margin-right: 1rem;
+	text-transform: uppercase;
+	text-align: left;
+	border-bottom: solid rgba(87, 107, 87, .5) 2px;
+}
 .content-margined {
 	margin: 0.5rem;
 	overflow-y: hidden;
 	overflow-x: auto;
 	display: grid;
 }
+.content-margined form {
+	justify-self: left;
+}
 .table {
 	width: 100%;
 	padding: 1rem;
+	text-align: center;
 }
+
 th {
-	text-align: left;
 	font-size: 1.1rem;
+	border-right: #9ca7b9 solid 1px;
 }
 tbody > tr:nth-child(odd) {
 	background-color: #f0f0f0;
@@ -601,6 +650,9 @@ tbody > tr > td:last-child {
 	}
 	tbody {
 		font-size: 1.3rem;
+	}
+	.form-container {
+		min-width: 30rem;
 	}
 }
 .button-cancel {
@@ -654,7 +706,7 @@ tbody > tr > td:last-child {
 	display: flex;
 	justify-content: space-between;
 	width: 40rem;
-	margin: 1rem auto;
+	margin: 2rem auto;
 	z-index: 1;
 }
 .checkout-steps > div {
@@ -669,6 +721,21 @@ tbody > tr > td:last-child {
 }
 /* payment */
 
+.payment-container {
+	width: 100%;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+.pay-method {
+	display: flex;
+	justify-content: space-around;
+}
+.pay-method input {
+	max-width: 5rem;
+}
 .pay-button {
 	margin-top: 1rem;
 	border: #427aa1 solid 1px;
@@ -731,6 +798,7 @@ tbody > tr > td:last-child {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
+	margin-left: 1rem;
 }
 .cart-image {
 	width: 100%;
@@ -755,15 +823,72 @@ tbody > tr > td:last-child {
 .profile {
 	display: flex;
 	flex-wrap: wrap;
+	width: 100%;
+	padding: 1rem;
 }
-
+.profile table tbody {
+	font-size: 1.5rem;
+}
 .profile-info {
-	flex: 1 1 30rem;
+	flex: 1;
+	width: 100%;
+	margin: 1rem;
+	display: flex;
+	align-items: left;
 }
 .profile-orders {
-	flex: 3 1 60rem;
+	flex: 3;
+	min-width: 60rem;
 }
-
+.profile-info form {
+	padding: 1rem;
+	background: rgba(230, 218, 218, .5);
+	width: 30rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: .5rem;
+}
+.profile-info form ul {
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	min-height: 30rem;
+	padding: 0;
+	margin: 0;
+}
+.profile-info form ul > li:first-child {
+	text-align: center;
+	color: #103d5e;
+}
+.profile-info form ul li {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1rem;
+}
+.profile-info form ul li input {
+	padding: .5rem;
+}
+.profile-info form ul li button {
+	width: 100%;
+}
+.details-btn {
+	padding: .25rem;
+	text-align: center;
+	border: solid #276e2b 1px;
+	background: #fff;
+}
+.details-btn:hover {
+	border-radius: 15px;
+}
+@media only screen and(min-width:500px) {
+	.profile-info {
+		width: 30rem;
+	}
+}
 /* admin */
 
 .admin-btn {
@@ -807,6 +932,11 @@ tbody > tr > td:last-child {
 }
 /* orders page */
 
+.order-list {
+	border: #98a2b1 solid 2px;
+	min-width: 100rem;
+}
+
 .link-details {
 	font-size: 1.5rem;
 	border: teal solid 1px;
@@ -834,7 +964,7 @@ tbody > tr > td:last-child {
 .filter-container {
 	background: linear-gradient(to top, #2c3e50 0%, #fd746c 100%);
 	animation: riseup .3s linear 3.5s normal forwards;
-	margin: 0 auto;
+	margin: 0;
 	padding: 2rem;
 	position: relative;
 	border: none;
@@ -859,7 +989,7 @@ tbody > tr > td:last-child {
 	border-radius: 2rem;
 	display: flex;
 	padding: 0;
-	margin: 1rem auto;
+	margin: 1rem;
 	height: 10rem;
 	max-width: 40rem;
 	justify-content: flex-end;
@@ -888,7 +1018,7 @@ tbody > tr > td:last-child {
 	height: 4rem;
 	border-radius: 4rem;
 	padding: 1rem;
-	z-index: 1;
+	z-index: 2;
 }
 .search-btn {
 	color: #e84118;
@@ -902,7 +1032,7 @@ tbody > tr > td:last-child {
 	align-items: center;
 	outline: none;
 	border: none;
-	z-index: 1;
+	z-index: 2;
 }
 
 .search-btn:active {
@@ -920,18 +1050,19 @@ tbody > tr > td:last-child {
 	width: 0;
 	transition: .8s ease-out;
 	border-radius: 2rem;
-	z-index: 1;
+	z-index: 2;
 }
 .search-box:hover > .search-txt {
-	width: 15rem;
+	width: 5rem;
 	padding: 0 .6rem;
 }
+
 .search-box:hover > .search-btn {
 	background: #fff;
 }
 .select {
 	position: relative;
-	margin-right: 2rem;
+	margin-right: 1rem;
 	z-index: 1;
 }
 .select select {
@@ -1007,7 +1138,14 @@ tbody > tr > td:last-child {
 		color: #ad5741;
 	}
 }
-
+@media only screen and (min-width: 410px) {
+	.filter {
+		margin: 1rem auto;
+	}
+	.search-box:hover > .search-txt {
+		width: 15rem;
+	}
+}
 /* home page-promo-container */
 
 .promo-container {
@@ -1017,6 +1155,7 @@ tbody > tr > td:last-child {
 	animation: hide .8s ease-in 3.5s 1 normal forwards;
 	overflow: hidden;
 	width: 100%;
+	margin: 0 auto;
 }
 @keyframes hide {
 	0% {
@@ -1039,8 +1178,9 @@ tbody > tr > td:last-child {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-60%, -50%);
+	transform: translate(-50%, -50%);
 }
+
 .container span {
 	text-transform: uppercase;
 	display: block;
@@ -1048,12 +1188,12 @@ tbody > tr > td:last-child {
 .text1 {
 	font-size: 5rem;
 	font-weight: 700;
-	letter-spacing: .8rem;
 	margin-bottom: .3rem;
 	position: relative;
 	background: transparent;
 	animation: text 1.7s 1;
 	color: #000;
+	letter-spacing: .25rem;
 }
 .text2 {
 	font-size: 3rem;
@@ -1077,14 +1217,15 @@ tbody > tr > td:last-child {
 }
 @keyframes text {
 	0% {
+		transform: scale(1);
 		margin-bottom: -3.2rem;
 	}
 	30% {
-		letter-spacing: 2rem;
+		transform: scale(1.1);
 		margin-bottom: -3.2rem;
 	}
 	80% {
-		letter-spacing: 1rem;
+		transform: scale(1);
 		margin-bottom: -3rem;
 	}
 }

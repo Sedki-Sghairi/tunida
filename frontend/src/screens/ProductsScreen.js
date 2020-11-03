@@ -65,9 +65,9 @@ export default function ProductsScreen(props) {
 	return (
         <div className="content-margined">
             <div className="prodcut-header">
-                <h3>Products</h3>
                 <a href='#create' className='button button-primary' onClick={() => openModal({})}>Create new Product</a>
             </div>
+                <h3 className='products-listed'>Products listed</h3>
             <div className="product-list">
                 <table className='table'>
                 <thead>
@@ -104,7 +104,7 @@ export default function ProductsScreen(props) {
             </div>
         { modalVisible &&
 	
-			<form  id='create' className='form' onSubmit={submitHandler}>
+			<form  id='create'  onSubmit={submitHandler}>
                 <ul className='form-container'>
                     <li>
                         <h3>Add you product</h3>

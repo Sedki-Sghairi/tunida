@@ -14,16 +14,17 @@ function PaymentScreen(props) {
     props.history.push('placeorder');
   };
   return (
-    <div>
+    <div className='payment-container'>
       <CheckoutSteps step1 step2 step3></CheckoutSteps>
       <div className="form">
         <form onSubmit={submitHandler}>
-          <ul className="form-container">
+          <ul className="form-content">
             <li>
               <h2>Payment</h2>
             </li>
             <li>
-              <div>
+              <div className='pay-method'>
+                <label htmlFor="paymentMethod">Paypal</label>
                 <input
                   type="radio"
                   name="paymentMethod"
@@ -31,7 +32,6 @@ function PaymentScreen(props) {
                   value="paypal"
                   onChange={(e) => setPaymentMethod(e.target.value)}
                 ></input>
-                <label htmlFor="paymentMethod">Paypal</label>
               </div>
             </li>
             <li>

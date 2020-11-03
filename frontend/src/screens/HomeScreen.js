@@ -95,9 +95,6 @@ export default function HomeScreen(props) {
 								<div className="product-name"> {item.title} </div>
 								<div className="product-brand">{item.brand}</div>
 								<div className="product-price">{item.price} TND</div>
-								<div className="product-rating">
-									{item.rating}({item.reviews})
-								</div>
 							</div>
 						</Link>
 					</li>

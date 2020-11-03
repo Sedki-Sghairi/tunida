@@ -31,8 +31,7 @@ function OrdersScreen(props) {
         <h3>Orders</h3>
       </div>
       <div className="order-list">
-
-        <table className="table">
+        <table>
           <thead>
             <tr>
               <th>ID</th>
@@ -43,7 +42,7 @@ function OrdersScreen(props) {
               <th>PAID AT</th>
               <th>DELIVERED</th>
               <th>DELIVERED AT</th>
-              <th>ACTIONS</th>
+              <th>ACTION</th>
             </tr>
           </thead>
           <tbody>
@@ -52,9 +51,9 @@ function OrdersScreen(props) {
               <td>{order.createdAt}</td>
               <td>{order.totalPrice}</td>
               <td>{order.user.name}</td>
-              <td>{order.isPaid.toString()}</td>
+              <td>{order.isPaid?'paid':'not paid'}</td>
               <td>{order.paidAt}</td>
-              <td>{order.isDelivered.toString()}</td>
+              <td>{order.isDelivered?'delivered':'not delivered'}</td>
               <td>{order.deliveredAt}</td>
               <td>
                 <Link to={"/order/" + order._id} className="link-details" >Details</Link>
