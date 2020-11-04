@@ -32,7 +32,7 @@ export default function HomeScreen(props) {
 		console.log(sortOrder)
 	}
 	return (
-	 <>     
+	 <div className="home">
 	       <div className="filter-container">
 		   <ul className="filter">
 				  <li>
@@ -101,6 +101,7 @@ export default function HomeScreen(props) {
 				))}
 			</ul>
 		)}
-	</>
+		</div>   
+	
     )
 }
