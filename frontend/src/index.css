@@ -582,7 +582,7 @@ input {
 	color: #09343d;
 }
 input::placeholder {
-	font-size: 1.5rem;
+	font-size: 1rem;
 	text-transform: lowercase;
 	color: #77868d;
 }
