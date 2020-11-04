@@ -95,6 +95,7 @@ textarea {
 }
 .main {
 	grid-area: main;
+	display: grid;
 }
 .footer {
 	grid-area: footer;
@@ -247,16 +248,6 @@ textarea {
 
 /* product-details */
 
-.fa-home {
-	position: sticky;
-	top: 6rem;
-	color: #7f9c96;
-	background-color: #fff;
-	border-radius: 50%;
-	padding: 1rem;
-	font-size: 2rem;
-	animation: bounce 2s ease-in-out infinite;
-}
 .description {
 	color: #536d7a;
 }
@@ -697,9 +688,9 @@ tbody > tr > td:last-child {
 	background-color: #4a7b9d;
 	border: #4a7b9d solid 1.5px;
 }
-.product-list {
+/* .product-list {
 	min-width: 50rem;
-}
+} */
 /* Checkout-steps */
 
 .checkout-steps {
@@ -932,11 +923,18 @@ tbody > tr > td:last-child {
 }
 /* orders page */
 
+.order-header {
+	color: rgb(54, 78, 54);
+	margin-left: 1rem;
+}
 .order-list {
 	border: #98a2b1 solid 2px;
-	min-width: 100rem;
+	/* overflow: auto; */
 }
-
+.order-list table {
+	width: 100%;
+	text-align: center;
+}
 .link-details {
 	font-size: 1.5rem;
 	border: teal solid 1px;
@@ -1053,7 +1051,7 @@ tbody > tr > td:last-child {
 	z-index: 2;
 }
 .search-box:hover > .search-txt {
-	width: 5rem;
+	width: 6.9rem;
 	padding: 0 .6rem;
 }
 
@@ -1193,7 +1191,7 @@ tbody > tr > td:last-child {
 	background: transparent;
 	animation: text 1.7s 1;
 	color: #000;
-	letter-spacing: .25rem;
+	letter-spacing: .5rem;
 }
 .text2 {
 	font-size: 3rem;
@@ -1217,15 +1215,14 @@ tbody > tr > td:last-child {
 }
 @keyframes text {
 	0% {
-		transform: scale(1);
+		letter-spacing: .5rem;
 		margin-bottom: -3.2rem;
 	}
 	30% {
-		transform: scale(1.1);
+		letter-spacing: .9rem;
 		margin-bottom: -3.2rem;
 	}
 	80% {
-		transform: scale(1);
 		margin-bottom: -3rem;
 	}
 }

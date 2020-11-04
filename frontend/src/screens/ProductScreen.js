@@ -22,9 +22,6 @@ export default function ProductScreen(props) {
 	};
 	return (
 		<div>
-			<Link to="/">
-			<i className="fas fa-home"></i>
-			</Link>
 			{loading ? (
 				<div className="user-message">Loading...</div>
 			) : error ? (

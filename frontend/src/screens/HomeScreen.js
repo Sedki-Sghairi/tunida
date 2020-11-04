@@ -39,7 +39,7 @@ export default function HomeScreen(props) {
 					<form onSubmit={submitHandler} className='search-box'>
 						<input name='searchKeyword'
 						 onChange={(e) => setSearchKeyword(e.target.value)}
-						 placeholder='search by name'
+						 placeholder='search'
 						 className='search-txt'
 						 onSelect={submitHandler}
 						 />
