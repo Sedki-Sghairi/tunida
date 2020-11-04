@@ -52,7 +52,7 @@ input {
 	height: 100vh;
 }
 .header {
-	z-index: 101;
+	z-index: 200;
 	position: fixed;
 	top: 0;
 	height: 3.5rem;
@@ -184,7 +184,7 @@ input {
 	top: 4.9rem;
 	left: 0;
 	width: 100%;
-	z-index: 110;
+	z-index: 210;
 	transform: translateX(-101%);
 	transition: all .3s linear;
 	background: #115266;
@@ -582,7 +582,8 @@ input {
 	color: #09343d;
 }
 input::placeholder {
-	font-size: 1.5rem;
+	font-size: 1.2rem;
+	padding: 1rem;
 	text-transform: lowercase;
 	color: #77868d;
 }
@@ -645,6 +646,9 @@ tbody > tr > td:last-child {
 	}
 	.form-container {
 		min-width: 30rem;
+	}
+	input::placeholder {
+		font-size: 1.5rem;
 	}
 }
 .button-cancel {
@@ -977,7 +981,6 @@ tbody > tr > td:last-child {
 	height: 40rem;
 	overflow: hidden;
 }
-
 @keyframes riseup {
 	0% {
 		height: 40rem;
@@ -1002,7 +1005,7 @@ tbody > tr > td:last-child {
 	animation: animate .9s ease-in 3.5s 1 reverse forwards;
 	visibility: hidden;
 	box-shadow: -1px 2px 14px 10px rgba(0, 0, 0, 0.1);
-	z-index: 100;
+	z-index: 199;
 }
 
 @keyframes animate {
@@ -1255,15 +1258,21 @@ tbody > tr > td:last-child {
 	height: 2.5rem;
 	display: grid;
 	place-items: center;
-	border-radius: .5rem;
+	border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
+	border-bottom-left-radius: .3rem;
+	border-bottom-right-radius: .3rem;
 	color: #fff;
 	animation: bounce 2s ease-in-out infinite;
 	visibility: hidden;
-	z-index: -100;
+	z-index: -10;
+	padding: .15rem;
+	opacity: 0;
 }
 .show-link {
 	visibility: visible;
 	z-index: 101;
+	opacity: 1;
 }
 
 @keyframes bounce {

@@ -45,7 +45,7 @@ function App() {
 							<Hamburger
 								onToggle={() => {
 									document.getElementById('sidebar').classList.toggle('open')
-		                             document.querySelector('.sidebar-header').classList.toggle('header-show')
+		                            document.querySelector('.sidebar-header').classList.toggle('header-show')
 								}}
 							/>
 						</button>
