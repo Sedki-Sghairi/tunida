@@ -26,9 +26,12 @@ export default function HomeScreen(props) {
 		e.preventDefault()
 		dispatch(listProducts(category, searchKeyword, sortOrder))
 	}
-	const sortHandler = () =>{
+	useEffect(() => {
 		dispatch(listProducts(category, searchKeyword, sortOrder))
-	}
+		return () => {
+			//
+		}
+	}, [sortOrder])
 	return (
 	 <div className="home">
 	       <div className="filter-container">
@@ -39,19 +42,18 @@ export default function HomeScreen(props) {
 						 onChange={(e) => setSearchKeyword(e.target.value)}
 						 placeholder='search'
 						 className='search-txt'
-						 onSelect={submitHandler}
 						 />
 						<button type='submit' className='search-btn'><i className="fas fa-search"></i></button>
 					</form>
 				  </li>
 				  <li>
 					<div className="select">
-					<select  name="sortOrder" onChange={(e) => setSortOrder(e.target.value)} onClick={sortHandler} >
+					<select  name="sortOrder" onChange={(e) => setSortOrder(e.target.value)}>
 						<option value="">Latest products</option>
 						<option value="lowest">Lowest price</option>
 						<option value="highest">Highest price</option>
 					</select>
-					<span className="arrow"><i className="fas fa-arrow-circle-down"></i></span>
+					<span className="arrow"><span>sort by</span><i className="fas fa-arrow-circle-down"></i></span>
 					</div>
 				  </li>
 			   </ul>

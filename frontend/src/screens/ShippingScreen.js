@@ -18,7 +18,7 @@ function ShippingScreen(props) {
     dispatch(saveShipping({ address, city, postalCode, country, phone }));
     props.history.push('payment');
   }
-  return <div className='container'>
+  return <>
     <CheckoutSteps step1 step2 ></CheckoutSteps>
  
       <form onSubmit={submitHandler} className="form">
@@ -62,15 +62,13 @@ function ShippingScreen(props) {
             <input type="tel" name="phone" id="phone" required={true} placeholder='exp:971551112222' pattern='[0-9]{3}[0-9]{2}[0-9]{3}[0-9]{4}' onChange={(e) => setPhone(e.target.value)}>
             </input>
           </li>
-
-
           <li>
             <button type="submit" className="button primary">Continue</button>
           </li>
 
         </ul>
       </form>
-    </div>
+    </>
   
 
 }

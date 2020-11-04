@@ -29,7 +29,7 @@ export default function SigninScreen(props) {
 	return (
 	
 			<form  className='form' onSubmit={submitHandler}>
-                <ul className='form-container'>
+                <ul className='form-content'>
                     <li>
                         <h3>Sign-in</h3>
                     </li>
