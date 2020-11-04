@@ -29,7 +29,13 @@ function App() {
 		document.getElementById('sidebar').classList.remove('open')
 		document.querySelector('.sidebar-header').classList.remove('header-show')
 	}
-
+    window.addEventListener('scroll', function(){
+		if(window.pageYOffset > 500){
+			document.querySelector('.top-link').classList.add('show-link')
+		}else{
+			document.querySelector('.top-link').classList.remove('show-link')
+		}
+	})
 	return (
 		<BrowserRouter>
 			<div className="grid-container">
@@ -118,7 +124,11 @@ function App() {
 						<Route path='/cart/:id?' component={CartScreen}/>
 					</div>
 				</main>
+				<a className="top-link" href="#top">
+				  <i className="fas fa-arrow-up"></i>
+				</a>
 				<footer className="footer">all rights reserved</footer>
+
 			</div>
 		</BrowserRouter>
 	);

@@ -104,7 +104,7 @@ export default function ProductsScreen(props) {
             </div>
         { modalVisible &&
 	
-			<form  id='create'  onSubmit={submitHandler}>
+			<form className='products-form' id='create'  onSubmit={submitHandler}>
                 <ul className='form-container'>
                     <li>
                         <h3>Add you product</h3>
