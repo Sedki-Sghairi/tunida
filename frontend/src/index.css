@@ -1063,7 +1063,7 @@ tbody > tr > td:last-child {
 	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 	padding: 1rem 0.5rem;
 	outline: none;
-	background: #4d5061;
+	background-color: #4d5061;
 	color: #cbdf90;
 	border: 0;
 	border-radius: 1rem;
@@ -1260,7 +1260,10 @@ tbody > tr > td:last-child {
 
 .home {
 	width: 100%;
-	min-height: 100vh;
+	height: 100%;
+	display: grid;
+
+	place-items: center;
 }
 .single-box {
 	position: absolute;

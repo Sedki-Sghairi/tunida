@@ -27,9 +27,7 @@ export default function HomeScreen(props) {
 		dispatch(listProducts(category, searchKeyword, sortOrder))
 	}
 	const sortHandler = () =>{
-		
 		dispatch(listProducts(category, searchKeyword, sortOrder))
-		console.log(sortOrder)
 	}
 	return (
 	 <div className="home">
