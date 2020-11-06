@@ -28,10 +28,22 @@ export default function HomeScreen(props) {
 	}
 	useEffect(() => {
 		dispatch(listProducts(category, searchKeyword, sortOrder))
-		return () => {
-			//
+		return (err) => {
+			console.error(err);
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [sortOrder])
+	
+		window.addEventListener('scroll', function(){
+			if(document.querySelector('.container-ads')){
+				if(window.pageYOffset > 200){
+					document.querySelector('.container-ads').classList.add('white')
+				}else{
+					document.querySelector('.container-ads').classList.remove('white')
+				}
+			}else return
+		})
+
 	return (
 	 <div className="home">
 	       <div className="filter-container">
@@ -80,17 +92,29 @@ export default function HomeScreen(props) {
     		</div>
 			</div>
 			{category?<h3 className='cat' id='cat'><span>Tunida</span>{' '}{category}</h3>
-			:<h3  className='catt' id='catt'><span>Tunida</span></h3>}
+			:<div className='ads-section'>
+				<h3  className='catt' id='catt'><span>Tunida</span></h3>
+				<div className='container-ads'>
+					80% Off 
+						<div id='flip'>
+						<div><div>buy</div></div>
+						<div><div>sell</div></div>
+						<div><div>fashion</div></div>
+				        </div>
+				your first Order!
+				<p>tunida is now in tunisia</p>
+				</div>
+			</div>}
 			{loading ? (
 				<div>Loading...</div>
 			) : error ? (
 				<div>{error}</div>
 			) : (
-			<ul className="products">
+			<ul className="products" id='sevanam'>
 				{products.map((item) => (
 					<li key={item._id} onClick={() => removeSidebar()}>
 						<Link to={`/product/${item._id}`}>
-							<div className="product">
+							<div className="product" id={item._id}>
 								<img src={item.image} alt={item.title} className="product-image" />
 								<div className="product-name"> {item.title} </div>
 								<div className="product-brand">{item.brand}</div>

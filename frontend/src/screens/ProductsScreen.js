@@ -63,13 +63,13 @@ export default function ProductsScreen(props) {
       }
     }
 	return (
-        <div className="content-margined">
+        <>
             <div className="prodcut-header">
                 <a href='#create' className='button button-primary' onClick={() => openModal({})}>Create new Product</a>
             </div>
                 <h3 className='products-listed'>Products listed</h3>
-            <div className="product-list">
-                <table className='table'>
+          
+                <table className='table order-table'>
                 <thead>
                     <tr>
                         <th>Title</th>
@@ -85,14 +85,14 @@ export default function ProductsScreen(props) {
                 <tbody>
                 {products.map(product => 
                    <tr key={product._id}>
-                    <td >{product.title}</td>
-                    <td>{product.category}</td>
-                    <td>{product.image}</td>
-                    <td>{product.price}</td>
-                    <td>{product.stock}</td>
-                    <td>{product.brand}</td>
-                    <td>{product.description}</td>
-                    <td> 
+                    <td data-label='Title'>{product.title}</td>
+                    <td data-label='Category'>{product.category}</td>
+                    <td data-label='Image'>{product.image}</td>
+                    <td data-label='Price'>{product.price}</td>
+                    <td data-label='Stock'>{product.stock}</td>
+                    <td data-label='Brand'>{product.brand}</td>
+                    <td data-label='Description'>{product.description}</td>
+                    <td data-label='Edit/Delete'> 
                         <a href='#create' className='edit' onClick={() => openModal(product)}>edit</a>
                         {' '}
                         <button className='button-delete'onClick={() => deleteHandler(product)} >remove</button>
@@ -101,7 +101,7 @@ export default function ProductsScreen(props) {
                 )}
                 </tbody>
                 </table>
-            </div>
+          
         { modalVisible &&
 	
 			<form className='products-form' id='create'  onSubmit={submitHandler}>
@@ -145,6 +145,6 @@ export default function ProductsScreen(props) {
                 </ul>
             </form>
             }
-            </div>
+            </>
 	);
 }

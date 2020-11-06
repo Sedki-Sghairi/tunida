@@ -84,7 +84,7 @@ function ProfileScreen(props) {
           </ul>
         </form>
     </div>
-    <div className="profile-orders content-margined">
+    <div className="profile-orders">
       {
         loadingOrders ? <div>Loading...</div> :
           errorOrders ? <div>{errorOrders} </div> :

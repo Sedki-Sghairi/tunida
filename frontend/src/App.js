@@ -14,6 +14,7 @@ import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import OrdersScreen from './screens/OrdersScreen';
+import { HashLink } from 'react-router-hash-link';
 
 function App() {
 	const userSignin = useSelector(state => state.userSignin)
@@ -30,11 +31,14 @@ function App() {
 		document.querySelector('.sidebar-header').classList.remove('header-show')
 	}
     window.addEventListener('scroll', function(){
-		if(window.pageYOffset > 500){
-			document.querySelector('.top-link').classList.add('show-link')
-		}else{
-			document.querySelector('.top-link').classList.remove('show-link')
-		}
+		if(document.querySelector('.top-link')){
+			if(window.pageYOffset > 500){
+				document.querySelector('.top-link').classList.add('show-link')
+			}else{
+				document.querySelector('.top-link').classList.remove('show-link')
+			}
+		}else return
+		
 	})
 	return (
 		<BrowserRouter>
@@ -49,7 +53,7 @@ function App() {
 								}}
 							/>
 						</button>
-						<Link to="/">Tunida</Link>
+						<HashLink to="/#sevanam">Tunida</HashLink>
 					</div>
 					<div className="header-links">
 

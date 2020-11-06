@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { detailsProduct } from '../actions/productAction';
+import { HashLink } from 'react-router-hash-link';
 import { useState } from 'react';
 export default function ProductScreen(props) {
 	const [ qty, setQty ] = useState(1);
@@ -19,6 +20,49 @@ export default function ProductScreen(props) {
 	const handlePayment = () => {
 		props.history.push('/cart/' + props.match.params.id + '?qty' + qty);
 	};
+	/*animate details*/
+
+	window.addEventListener('scroll', function(){
+		if( document.querySelector(".container-threed") && (document.querySelector(".card"))
+		&& (document.querySelector(".titlethreed")) && (document.querySelector(".tunida-product img")
+		&& (document.querySelector(".go-home"))) && (document.querySelector(".infothreed h3"))
+		&& (document.querySelector(".sizes"))){
+			const card = document.querySelector(".card");
+			const container = document.querySelector(".container-threed");
+			const titlethreed = document.querySelector(".titlethreed");
+			const tunidaProduct = document.querySelector(".tunida-product img");
+			const go = document.querySelector(".go-home");
+			const description = document.querySelector(".infothreed h3");
+			const sizes = document.querySelector(".sizes");
+			container.addEventListener("mousemove", (e) => {
+			let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+			let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+			card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+			});
+			container.addEventListener("mouseenter", (e) => {
+			document.querySelector('.header').classList.add('no-height')
+			card.style.transition = "none";
+			titlethreed.style.transform = "translateZ(150px)";
+			tunidaProduct.style.transform = "translateZ(200px) ";
+			description.style.transform = "translateZ(125px)";
+			sizes.style.transform = "translateZ(100px)";
+			go.style.transform = "translateZ(75px)";
+			});
+			container.addEventListener("mouseleave", (e) => {
+			document.querySelector('.header').classList.remove('no-height')
+			card.style.transition = "all 0.5s ease";
+			card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+			titlethreed.style.transform = "translateZ(0px)";
+			tunidaProduct.style.transform = "translateZ(0px) rotateZ(0deg)";
+			description.style.transform = "translateZ(0px)";
+			sizes.style.transform = "translateZ(0px)";
+			go.style.transform = "translateZ(0px)";
+			});
+		}
+	})
+	const gohomeHandle = () =>{
+		document.querySelector('.header').classList.remove('no-height')
+	}
 	return (
 		<div>
 			{loading ? (
@@ -27,16 +71,31 @@ export default function ProductScreen(props) {
 				<div className="user-message">{error}</div>
 			) : (
 				<div className="details">
-						<ul  className="details-info">
-							<li>
-								<span className='product-brand '>{product.brand}</span>
-								<h4 className='cart-name'>{product.title}</h4>
-							</li>
-							<li className='description'>{product.description}</li>
-						</ul>
-					<div className="details-image">
-						<img src={product.image} alt={product.title} />
+				<div className="container-large">
+					<div className="container-threed">
+						<div className="card">
+							<div className="tunida-product">
+								<img src={product.image} alt="adidas"/>
+							</div>
+							<div className="infothreed">
+								<h1 className="titlethreed">{product.title}</h1>
+								<h3>{product.description}</h3>
+								<div className="sizes">
+									<button>S</button>
+									<button>M</button>
+									<button className="active-btn">L</button>
+									<button>XL</button>
+								</div>
+								<HashLink to={`/#${product._id}`}>
+								<div className='go-home' onClick={gohomeHandle}>
+									<button className='button-threed' onClick={gohomeHandle}>Go Back </button>
+								</div>
+								</HashLink>
+							</div>
+						</div>
 					</div>
+				</div>
+                   
 					<div className="details-action">
 						<ul>
 							<li>
