@@ -36,10 +36,13 @@ export default function HomeScreen(props) {
 	
 		window.addEventListener('scroll', function(){
 			if(document.querySelector('.container-ads')){
-				if(window.pageYOffset > 200){
+				if(0 < window.pageYOffset ){
 					document.querySelector('.container-ads').classList.add('white')
+					document.querySelector('.before-ads').classList.add('clear')
 				}else{
 					document.querySelector('.container-ads').classList.remove('white')
+					document.querySelector('.before-ads').classList.remove('clear')
+					
 				}
 			}else return
 		})
@@ -93,6 +96,7 @@ export default function HomeScreen(props) {
 			</div>
 			{category?<h3 className='cat' id='cat'><span>Tunida</span>{' '}{category}</h3>
 			:<div className='ads-section'>
+			    <div className="before-ads"></div>
 				<h3  className='catt' id='catt'><span>Tunida</span></h3>
 				<div className='container-ads'>
 					80% Off 

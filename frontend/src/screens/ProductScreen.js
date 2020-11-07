@@ -74,11 +74,12 @@ export default function ProductScreen(props) {
 				<div className="container-large">
 					<div className="container-threed">
 						<div className="card">
-							<div className="tunida-product">
-								<img src={product.image} alt="adidas"/>
-							</div>
+							
 							<div className="infothreed">
 								<h1 className="titlethreed">{product.title}</h1>
+								<div className="tunida-product">
+								<img src={product.image} alt="adidas"/>
+							</div>
 								<h3>{product.description}</h3>
 								<div className="sizes">
 									<button>S</button>

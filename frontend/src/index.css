@@ -1556,16 +1556,29 @@ input::placeholder {
 	place-items: center;
 	overflow: visible;
 	margin-bottom: 4rem;
-	background: url('./images/gpYhu.png');
+	background: url('./images/pexels-castorly-stock-3682293.jpg');
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	border-radius: .1rem;
+	position: relative;
+}
+.before-ads {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, 1);
+	transition: all .3s ease;
+}
+.clear {
+	background: rgba(255, 255, 255, 0);
 }
 
 .container-ads {
-	color: rgb(143, 140, 140);
+	color: rgb(117, 117, 100);
 	text-transform: uppercase;
 	font-size: 2.5rem;
 	font-weight: bold;
@@ -1574,9 +1587,11 @@ input::placeholder {
 	text-align: center;
 	animation: disappear 5s linear;
 	font-family: "Roboto", sans-serif;
+	transition: all .3s ease;
 }
+
 .white {
-	color: #fff;
+	color: #ffffff;
 }
 #flip {
 	height: 5rem;
