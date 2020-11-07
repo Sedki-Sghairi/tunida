@@ -101,7 +101,7 @@ input {
 }
 .main {
 	grid-area: main;
-	width: fit-content;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -1123,7 +1123,7 @@ input::placeholder {
 	padding: 0;
 	margin: 1rem auto;
 	height: 10rem;
-	max-width: 39rem;
+	max-width: 35rem;
 	justify-content: flex-end;
 	align-items: center;
 	animation: animate .9s ease-in 3.5s 1 reverse forwards;
@@ -1282,6 +1282,9 @@ input::placeholder {
 	}
 }
 @media only screen and (min-width: 410px) {
+	.filter {
+		max-width: 39rem;
+	}
 	.search-box:hover > .search-txt {
 		width: 15rem;
 	}
