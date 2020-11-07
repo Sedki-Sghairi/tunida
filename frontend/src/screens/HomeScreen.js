@@ -46,7 +46,6 @@ export default function HomeScreen(props) {
 				}
 			}else return
 		})
-
 	return (
 	 <div className="home">
 	       <div className="filter-container">
