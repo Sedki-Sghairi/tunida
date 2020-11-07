@@ -15,6 +15,9 @@ body {
 }
 #root {
 	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-content: center;
 }
 h1,
 h3,
@@ -74,6 +77,7 @@ input {
 .grid-container {
 	position: relative;
 	display: grid;
+	justify-content: center;
 	grid-template-areas: 'header' 'main' 'footer';
 	grid-template-columns: 1fr;
 	grid-template-rows: 5rem 1fr 5rem;
@@ -97,7 +101,7 @@ input {
 }
 .main {
 	grid-area: main;
-	width: 100%;
+	width: fit-content;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -163,6 +167,7 @@ input {
 /*products-page*/
 
 .products {
+	width: 100%;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
@@ -1093,7 +1098,7 @@ input::placeholder {
 	background: linear-gradient(to top, #2c3e50 0%, #fd746c 100%);
 	animation: riseup .3s linear 3.5s normal forwards;
 	margin: 0;
-	padding: 5rem 0 2rem 0;
+	padding: 2rem 0;
 	position: relative;
 	border: none;
 	width: 100%;
@@ -1116,7 +1121,7 @@ input::placeholder {
 	border-radius: 2rem;
 	display: flex;
 	padding: 0;
-	margin: 1rem;
+	margin: 1rem auto;
 	height: 10rem;
 	max-width: 39rem;
 	justify-content: flex-end;
@@ -1277,9 +1282,6 @@ input::placeholder {
 	}
 }
 @media only screen and (min-width: 410px) {
-	.filter {
-		margin: 1rem auto;
-	}
 	.search-box:hover > .search-txt {
 		width: 15rem;
 	}
@@ -1413,8 +1415,8 @@ input::placeholder {
 	/* height: 100%; */
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-	place-items: center;
+	justify-content: center;
+	align-items: center;
 }
 .single-box {
 	position: absolute;
