@@ -312,6 +312,7 @@ input {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
 }
 .card {
 	transform-style: preserve-3d;
@@ -1561,7 +1562,6 @@ input::placeholder {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	border-radius: .1rem;
 	position: relative;
 }
 .before-ads {

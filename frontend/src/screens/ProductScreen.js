@@ -26,7 +26,7 @@ export default function ProductScreen(props) {
 		if( document.querySelector(".container-threed") && (document.querySelector(".card"))
 		&& (document.querySelector(".titlethreed")) && (document.querySelector(".tunida-product img")
 		&& (document.querySelector(".go-home"))) && (document.querySelector(".infothreed h3"))
-		&& (document.querySelector(".sizes"))){
+		&& (document.querySelector(".sizes")) && (500 < document.querySelector('.container-threed').offsetWidth)){
 			const card = document.querySelector(".card");
 			const container = document.querySelector(".container-threed");
 			const titlethreed = document.querySelector(".titlethreed");
