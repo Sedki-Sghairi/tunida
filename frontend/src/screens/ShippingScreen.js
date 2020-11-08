@@ -57,7 +57,7 @@ function ShippingScreen(props) {
           </li>
           <li>
             <label htmlFor="phone">
-              Country
+              Phone Number
           </label>
             <input type="tel" name="phone" id="phone" required={true} placeholder='exp:971551112222' pattern='[0-9]{3}[0-9]{2}[0-9]{3}[0-9]{4}' onChange={(e) => setPhone(e.target.value)}>
             </input>
