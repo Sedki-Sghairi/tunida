@@ -459,8 +459,29 @@ button.active-btn {
 }
 
 /* cat-items */
+.back-btn {
+	color: #015a68;
+	position: fixed;
+	top: 6rem;
+	left: 1rem;
+}
+.back-btn:hover,
+.back-btn:focus {
+	color: #002930;
+	letter-spacing: .24rem;
+}
+
+.ship {
+	width: 100%;
+	min-height: 84vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	text-align: left;
+}
 
 .cart {
+	width: 100%;
 	display: grid;
 	text-align: center;
 }
@@ -611,19 +632,19 @@ button.active-btn {
 }
 .form-content {
 	width: 100%;
-	max-height: 50rem;
+	max-width: 35rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
 	align-items: center;
 	color: #32444d;
-	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
 	padding: 4rem;
+	margin: .3rem auto;
 }
+
 .form-content li {
 	width: 100%;
-}
-.form-content li {
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 1rem;
@@ -636,7 +657,7 @@ button.active-btn {
 	height: 3rem;
 	border: #c6d2d8 solid 1px;
 	border-radius: .5rem;
-	width: 25rem;
+	width: 100%;
 }
 .button-secondary {
 	padding: .9rem;
@@ -809,20 +830,21 @@ input::placeholder {
 }
 /* payment */
 
-.payment-container {
-	width: 100%;
+.pay-container {
 	padding: 1rem;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-evenly;
+	justify-content: center;
 	align-items: center;
-}
-.payment-container > .form {
-	width: 100%;
 	text-align: center;
 }
-.payment-container form {
-	width: 100%;
+.pay-container li {
+	margin-bottom: 1.5rem;
+}
+.pay-container form {
+	border: #dad3d3 solid 1px;
+	padding: 3rem;
+	box-shadow: -1px 2px 4px 2px rgba(0, 0, 0, 0.1);
 }
 .payment-container ul {
 	width: 30rem;

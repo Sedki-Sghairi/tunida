@@ -37,7 +37,8 @@ function PlaceOrderScreen(props) {
    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [success]);
 
-  return <div className='payment-container'>
+  return <div className='ship'>
+   <Link to='/payment' className='back-btn'> Go back</Link>
     <CheckoutSteps step1 step2 step3 step4 ></CheckoutSteps>
     <div className="placeorder">
       <div className="placeorder-info">

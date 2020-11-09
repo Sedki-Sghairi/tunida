@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { saveShipping } from '../actions/cartActions';
 import CheckoutSteps from '../components/CheckoutSteps';
+import { Link } from 'react-router-dom'
 
 function ShippingScreen(props) {
 
@@ -18,10 +19,11 @@ function ShippingScreen(props) {
     dispatch(saveShipping({ address, city, postalCode, country, phone }));
     props.history.push('payment');
   }
-  return <>
+  return <div className='ship'>
+     <Link to='/cart' className='back-btn'> Go back</Link>
     <CheckoutSteps step1 step2 ></CheckoutSteps>
  
-      <form onSubmit={submitHandler} className="form">
+      <form onSubmit={submitHandler} className="form grow">
         <ul className="form-content">
           <li>
             <h2>Shipping</h2>
@@ -68,7 +70,7 @@ function ShippingScreen(props) {
 
         </ul>
       </form>
-    </>
+    </div>
   
 
 }

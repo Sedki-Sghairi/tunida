@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {  useDispatch } from 'react-redux';
 import { savePayment } from '../actions/cartActions';
 import CheckoutSteps from '../components/CheckoutSteps';
+import { Link } from 'react-router-dom'
 
 function PaymentScreen(props) {
   const [paymentMethod, setPaymentMethod] = useState('');
@@ -14,11 +15,12 @@ function PaymentScreen(props) {
     props.history.push('placeorder');
   };
   return (
-    <div className='payment-container'>
+    <div className='ship'>
+    <Link to='/shipping' className='back-btn'> Go back</Link>
       <CheckoutSteps step1 step2 step3></CheckoutSteps>
-      <div className="form">
+      <div className="pay-container">
         <form onSubmit={submitHandler}>
-          <ul className="form-content">
+          <ul className="pay-content">
             <li>
               <h2>Payment</h2>
             </li>

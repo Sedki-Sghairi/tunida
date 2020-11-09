@@ -29,7 +29,7 @@ function OrderScreen(props) {
 
   return loading ? <div>Loading ...</div> : error ? <div>{error}</div> :
 
-    <div className='payment-container'>
+    <div className='ship'>
       <div className="placeorder">
         <div className="placeorder-info">
           <div>
