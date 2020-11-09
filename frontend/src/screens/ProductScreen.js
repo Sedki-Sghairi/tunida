@@ -35,8 +35,8 @@ export default function ProductScreen(props) {
 			const description = document.querySelector(".infothreed h3");
 			const sizes = document.querySelector(".sizes");
 			container.addEventListener("mousemove", (e) => {
-			let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-			let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+			let xAxis = (window.innerWidth / 2 - e.pageX) / 31
+			let yAxis = (window.innerHeight / 2 - e.pageY) / 31
 			card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
 			});
 			container.addEventListener("mouseenter", (e) => {
@@ -64,7 +64,7 @@ export default function ProductScreen(props) {
 		document.querySelector('.header').classList.remove('no-height')
 	}
 	return (
-		<div>
+		<>
 			{loading ? (
 				<div className="user-message">Loading...</div>
 			) : error ? (
@@ -131,6 +131,6 @@ export default function ProductScreen(props) {
 					</div>
 				</div>
 			)}
-		</div>
+		</>
 	);
 }

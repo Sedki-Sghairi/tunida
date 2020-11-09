@@ -1572,11 +1572,7 @@ input::placeholder {
 	place-items: center;
 	overflow: visible;
 	margin-bottom: 4rem;
-	background: url('./images/1.jpg');
-	background-attachment: fixed;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+
 	position: relative;
 }
 .before-ads {
@@ -1606,7 +1602,7 @@ input::placeholder {
 }
 
 .white {
-	color: #ffffff;
+	color: rgb(117, 137, 156);
 }
 #flip {
 	height: 5rem;
@@ -1673,4 +1669,16 @@ input::placeholder {
 	font-size: 12px;
 	color: #999;
 	margin-top: 200px;
+}
+@media only screen and (min-width: 750px) {
+	.ads-section {
+		background: url('./images/1.jpg');
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.white {
+		color: #fff;
+	}
 }
