@@ -461,9 +461,7 @@ button.active-btn {
 /* cat-items */
 .back-btn {
 	color: #015a68;
-	position: fixed;
-	top: 6rem;
-	left: 1rem;
+	padding: 1rem;
 }
 .back-btn:hover,
 .back-btn:focus {
@@ -604,6 +602,9 @@ button.active-btn {
 	height: 100%;
 	padding: 0;
 	min-width: 30rem;
+}
+.form button {
+	margin-top: 1rem;
 }
 .form-container {
 	width: 100%;
@@ -813,7 +814,7 @@ input::placeholder {
 .checkout-steps {
 	display: flex;
 	justify-content: space-between;
-	width: 40rem;
+	width: 35rem;
 	margin: 2rem auto;
 	margin-top: 3rem;
 	z-index: 1;
