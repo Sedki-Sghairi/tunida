@@ -21,45 +21,44 @@ export default function ProductScreen(props) {
 		props.history.push('/cart/' + props.match.params.id + '?qty' + qty);
 	};
 	/*animate details*/
-
-	window.addEventListener('scroll', function(){
-		if( document.querySelector(".container-threed") && (document.querySelector(".card"))
-		&& (document.querySelector(".titlethreed")) && (document.querySelector(".tunida-product img")
-		&& (document.querySelector(".go-home"))) && (document.querySelector(".infothreed h3"))
-		&& (document.querySelector(".sizes")) && (500 < document.querySelector('.container-threed').offsetWidth)){
-			const card = document.querySelector(".card");
-			const container = document.querySelector(".container-threed");
-			const titlethreed = document.querySelector(".titlethreed");
-			const tunidaProduct = document.querySelector(".tunida-product img");
-			const go = document.querySelector(".go-home");
-			const description = document.querySelector(".infothreed h3");
-			const sizes = document.querySelector(".sizes");
-			container.addEventListener("mousemove", (e) => {
-			let xAxis = (window.innerWidth / 2 - e.pageX) / 31
-			let yAxis = (window.innerHeight / 2 - e.pageY) / 31
-			card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-			});
-			container.addEventListener("mouseenter", (e) => {
-			document.querySelector('.header').classList.add('no-height')
-			card.style.transition = "none";
-			titlethreed.style.transform = "translateZ(150px)";
-			tunidaProduct.style.transform = "translateZ(200px) ";
-			description.style.transform = "translateZ(125px)";
-			sizes.style.transform = "translateZ(100px)";
-			go.style.transform = "translateZ(75px)";
-			});
-			container.addEventListener("mouseleave", (e) => {
-			document.querySelector('.header').classList.remove('no-height')
-			card.style.transition = "all 0.5s ease";
-			card.style.transform = `rotateY(0deg) rotateX(0deg)`;
-			titlethreed.style.transform = "translateZ(0px)";
-			tunidaProduct.style.transform = "translateZ(0px) rotateZ(0deg)";
-			description.style.transform = "translateZ(0px)";
-			sizes.style.transform = "translateZ(0px)";
-			go.style.transform = "translateZ(0px)";
-			});
-		}
-	})
+	// window.addEventListener('scroll', function(){
+	// 	if( document.querySelector(".container-threed") && (document.querySelector(".card"))
+	// 	&& (document.querySelector(".titlethreed")) && (document.querySelector(".tunida-product img")
+	// 	&& (document.querySelector(".go-home"))) && (document.querySelector(".infothreed h3"))
+	// 	&& (document.querySelector(".sizes")) && (500 < document.querySelector('.container-threed').offsetWidth)){
+	// 		const card = document.querySelector(".card");
+	// 		const container = document.querySelector(".container-threed");
+	// 		const titlethreed = document.querySelector(".titlethreed");
+	// 		const tunidaProduct = document.querySelector(".tunida-product img");
+	// 		const go = document.querySelector(".go-home");
+	// 		const description = document.querySelector(".infothreed h3");
+	// 		const sizes = document.querySelector(".sizes");
+	// 		container.addEventListener("mousemove", (e) => {
+	// 		let xAxis = (window.innerWidth / 2 - e.pageX) / 27
+	// 		let yAxis = (window.innerHeight / 2 - e.pageY) / 27
+	// 		card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+	// 		});
+	// 		container.addEventListener("mouseenter", (e) => {
+	// 		document.querySelector('.header').classList.add('no-height')
+	// 		card.style.transition = "none";
+	// 		titlethreed.style.transform = "translateZ(150px)";
+	// 		tunidaProduct.style.transform = "translateZ(200px) ";
+	// 		description.style.transform = "translateZ(125px)";
+	// 		sizes.style.transform = "translateZ(100px)";
+	// 		go.style.transform = "translateZ(75px)";
+	// 		});
+	// 		container.addEventListener("mouseleave", (e) => {
+	// 		document.querySelector('.header').classList.remove('no-height')
+	// 		card.style.transition = "all 0.5s ease";
+	// 		card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+	// 		titlethreed.style.transform = "translateZ(0px)";
+	// 		tunidaProduct.style.transform = "translateZ(0px) rotateZ(0deg)";
+	// 		description.style.transform = "translateZ(0px)";
+	// 		sizes.style.transform = "translateZ(0px)";
+	// 		go.style.transform = "translateZ(0px)";
+	// 		});
+	// 	}
+	// })
 	const gohomeHandle = () =>{
 		document.querySelector('.header').classList.remove('no-height')
 	}
