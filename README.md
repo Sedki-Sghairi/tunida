@@ -1,2 +1,2 @@
 # tunida
-a react ecommerce platform using redux and mongodb
+a react fashion ecommerce platform. 
